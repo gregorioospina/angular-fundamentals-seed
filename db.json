@@ -1,1 +1,201 @@
-{}
+{
+    "clientes":[
+        {
+            "id": 1,
+            "nombre": "Gregorio",
+            "empresas":[
+                {
+                "id":10,
+                "nombre":"Surikato",
+                "items":[
+                    {
+                        "id":100,
+                        "nombre":"boxer1",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"rosado"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "S"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"17000"
+                            }
+                        ]
+                    },{
+                        "id":101,
+                        "nombre":"boxer2",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"amarillo"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "XL"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"30000"
+                            }
+                        ]
+                    },{
+                        "id":102,
+                        "nombre":"boxer3",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"negro"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "XXL"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"9900"
+                            }
+                        ]
+                    }
+                ]
+                }    
+            ]
+
+        },
+        {
+            "id": 2,
+            "nombre": "Andres",
+            "empresas":[
+                {
+                "id":11,
+                "nombre":"Viator",
+                "items":[
+                    {
+                        "id":105,
+                        "nombre":"saco1",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"azul"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "M"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"19000"
+                            }
+                        ]
+                    },{
+                        "id":103,
+                        "nombre":"saco2",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"negro"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "S"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"10000"
+                            }
+                        ]
+                    },{
+                        "id":104,
+                        "nombre":"saco3",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"blanco"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "L"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"30000"
+                            }
+                        ]
+                    }
+                ]
+                }    
+            ]
+
+        },
+        {
+            "id": 3,
+            "nombre": "Chorris",
+            "empresas":[
+                {
+                "id":12,
+                "nombre":"PanPaYa",
+                "items":[
+                    {
+                        "id":105,
+                        "nombre":"posillo1",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"negro"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "U"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"5000"
+                            }
+                        ]
+                    },{
+                        "id":106,
+                        "nombre":"posillo2",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"verde"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "U"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"10000"
+                            }
+                        ]
+                    },{
+                        "id":107,
+                        "nombre":"posillo3",
+                        "caracteristicas": [
+                            {
+                                "key":"color",
+                                "value":"negro"
+                            },
+                            {
+                                "key":"talla",
+                                "value": "U"
+                            },
+                            {
+                                "key":"precio",
+                                "value":"1000"
+                            }
+                        ]
+                    }
+                ]
+                }    
+            ]
+
+        }
+    ]
+
+
+}
