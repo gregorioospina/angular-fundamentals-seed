@@ -5,22 +5,22 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { KaigoDashboardService } from './kaigo-dashboard.service';
-import { EmpresaDashboardComponent } from './containers/empresa-dashboard/empresa-dashboard.component';
-import { EmpresaViewerComponent } from './containers/empresa-viewer/empresa-viewer.component';
+import { ClienteDashboardComponent } from './containers/cliente-dashboard/cliente-dashboard.component';
+import { ClienteViewerComponent } from './containers/cliente-viewer/cliente-viewer.component';
 import { empty } from 'rxjs/Observer';
-import { EmpresaDetailComponent } from './components/empresa-detail/empresa-detail.component';
-import { EmpresaFormComponent } from './components/empresa-form/empresa-form.component';
+import { ClienteDetailComponent } from './components/cliente-detail/cliente-detail.component';
+import { ClienteFormComponent } from './components/cliente-form/cliente-form.component';
 
 const routes: Routes =[
     {
-        path: 'empresas',
+        path: 'clientes',
         children:[
             {
                 path: '',
-                component: EmpresaDashboardComponent
+                component: ClienteDashboardComponent
             },{
                 path: 'id',
-                component: EmpresaViewerComponent
+                component: ClienteViewerComponent
             }
         ]
     }
@@ -34,15 +34,15 @@ const routes: Routes =[
         RouterModule.forChild(routes)
     ],
     declarations:[
-        EmpresaDashboardComponent,
-        EmpresaFormComponent,
-        EmpresaViewerComponent,
-        EmpresaFormComponent,
+        ClienteDashboardComponent,
+        ClienteFormComponent,
+        ClienteViewerComponent,
+        ClienteFormComponent,
         ItemDetailComponent,
-        EmpresaDetailComponent
+        ClienteDetailComponent
     ],
     exports: [
-        EmpresaViewerComponent
+        ClienteViewerComponent
     ],
     providers:[
         KaigoDashboardService

@@ -3,17 +3,17 @@ import {Component, OnInit} from '@angular/core';
 import 'rxjs/add/operator/switchMap';
 import { Router, Route, ActivatedRoute } from '@angular/router';
 import { KaigoDashboardService } from '../../kaigo-dashboard.service';
-import { Empresa } from '../../models/kaigo.interface';
+import { Cliente } from '../../models/kaigo.interface';
 
 @Component({
-    selector: 'empresa-viewer',
+    selector: 'cliente-viewer',
     template: `
     <div>
-        <empresa-form
-            [empresaDetail] = "empresa"
-            (update) = "onUpdateEmpresa($event)"
+        <cliente-form
+            [clienteDetail] = "cliente"
+            (update) = "onUpdateCliente($event)"
             >
-        </empresa-form>
+        </cliente-form>
         <br>
         <button (click)="goBack()">
             &lsaquo; Go Back
@@ -21,8 +21,8 @@ import { Empresa } from '../../models/kaigo.interface';
     </div>
     `
 })
-export class EmpresaViewerComponent implements OnInit{
-    empresa: Empresa;
+export class ClienteViewerComponent implements OnInit{
+    cliente: Cliente;
     constructor(
         private router: Router,
         private route: ActivatedRoute,
@@ -30,20 +30,20 @@ export class EmpresaViewerComponent implements OnInit{
     ){}
     ngOnInit(){
         this.route.params
-            .switchMap((data: Empresa)=> this.kaigoService.getEmpresa(data.id))
-            .subscribe((data: Empresa)=> this.empresa = data)
+            .switchMap((data: Cliente)=> this.kaigoService.getCliente(data.id))
+            .subscribe((data: Cliente)=> this.cliente = data)
     }
 
     goBack(){
-        this.router.navigate(['/empresas']);
+        this.router.navigate(['/clientes']);
     }
 
-    onUpdateEmpresa(event: Empresa){
+    onUpdateCliente(event: Cliente){
         console.log(event);
         this.kaigoService
-            .updateEmpresa(event)
-            .subscribe((data: Empresa)=>{
-                this.empresa = Object.assign({}, this.empresa, event)
+            .updateCliente(event)
+            .subscribe((data: Cliente)=>{
+                this.cliente = Object.assign({}, this.cliente, event)
             })
     }
 

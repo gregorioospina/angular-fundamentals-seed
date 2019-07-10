@@ -32,8 +32,8 @@ export class AppComponent {
       name: 'Home',
       exact: true
     },{
-      link:'/empresas',
-      name: 'Empresas',
+      link:'/clientes',
+      name: 'Clientes',
       exact: true
     }
   ];

@@ -3,7 +3,7 @@
         {
             "id": 1,
             "nombre": "Gregorio",
-            "empresas":[
+            "clientes":[
                 {
                 "id":10,
                 "nombre":"Surikato",
@@ -68,7 +68,7 @@
         {
             "id": 2,
             "nombre": "Andres",
-            "empresas":[
+            "clientes":[
                 {
                 "id":11,
                 "nombre":"Viator",
@@ -133,7 +133,7 @@
         {
             "id": 3,
             "nombre": "Chorris",
-            "empresas":[
+            "clientes":[
                 {
                 "id":12,
                 "nombre":"PanPaYa",

@@ -1,41 +1,41 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import { Empresa } from '../../models/kaigo.interface';
+import { Cliente } from '../../models/kaigo.interface';
 
 @Component({
-    selector: 'empresa-form',
-    styleUrls: ['empresa-form.styles.scss'],
+    selector: 'cliente-form',
+    styleUrls: ['cliente-form.styles.scss'],
     template:`
         <form (ngSubmit)="handleSubmit(form.value,form.valid)" #form= "ngForm" novalidate>
             <div>
-                Nombre de la Empresa:
+                Nombre de la Cliente:
                 <input
                     type="text"
                     name="nombre"
                     required
                     #nombre="ngModel"
-                    [ngModel]="empresaDetail?.nombre">
+                    [ngModel]="clienteDetail?.nombre">
             </div>
                 <div *ngIf = "nombre.errors?.required && nombre.dirty" class = "error">
-                    Nombre de la empresa es requerido
+                    Nombre de la cliente es requerido
                 </div>
             <button type = "submit" [disabled]="form.invalid">
-                Update Empresa
+                Update Cliente
             </button>
         </form>
     
     `
 })
-export class EmpresaFormComponent{
+export class ClienteFormComponent{
 
     @Input()
-    empresaDetail: Empresa;
+    clienteDetail: Cliente;
 
     @Output()
-    update: EventEmitter<Empresa> = new EventEmitter<Empresa>();
+    update: EventEmitter<Cliente> = new EventEmitter<Cliente>();
 
-    handleSubmit(empresa: Empresa, isValid: boolean){
+    handleSubmit(cliente: Cliente, isValid: boolean){
         if(isValid){
-            this.update.emit(empresa);
+            this.update.emit(cliente);
         }
     }
 

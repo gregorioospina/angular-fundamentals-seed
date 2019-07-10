@@ -1,29 +1,29 @@
 import {Component, Input, Output} from '@angular/core';
-import { Empresa, Item } from '../../models/kaigo.interface';
+import { Cliente, Item } from '../../models/kaigo.interface';
 import { EventEmitter } from '@angular/common/src/facade/async';
 import { KaigoDashboardService } from '../../kaigo-dashboard.service';
 
 @Component({
-    selector: 'empresa-detail',
+    selector: 'cliente-detail',
     template: `
         <div>
-            Empresa: <br>
-            Nombre: <a *ngIf="!editing">{{empresaDetail.nombre}} </a>
+            Cliente: <br>
+            Nombre: <a *ngIf="!editing">{{clienteDetail.nombre}} </a>
             <input
                 *ngIf = "editing"
                 type = "text"
-                [value]="empresaDetail.nombre"
-                (input)="onEmpresaNameChange(empresaname.value)"
-                #empresaname>
+                [value]="clienteDetail.nombre"
+                (input)="onClienteNameChange(clientename.value)"
+                #clientename>
             <br>
             <div>
                 Items:
 
                     <item-detail
-                        *ngFor = "let item of empresaDetail.items"
+                        *ngFor = "let item of clienteDetail.items"
                         [itemDetail]="item"
                         (remove)="handleRemove($event)"
-                        (edit)="handleItemEdit($event, empresaDetail)">
+                        (edit)="handleItemEdit($event, clienteDetail)">
                     </item-detail>
             </div>
 
@@ -34,51 +34,54 @@ import { KaigoDashboardService } from '../../kaigo-dashboard.service';
     `
 
 })
-export class EmpresaDetailComponent{
+export class ClienteDetailComponent{
     
     constructor(private kaigoService: KaigoDashboardService){}
     
     editing: boolean = false;
     
     @Input()
-    empresaDetail: Empresa;
+    clienteDetail: Cliente;
 
     @Output()
-    editEmpresa: EventEmitter<Empresa> = new EventEmitter<Empresa>();
+    editCliente: EventEmitter<Cliente> = new EventEmitter<Cliente>();
 
     @Output()
-    view: EventEmitter<Empresa> = new EventEmitter<Empresa>();
+    view: EventEmitter<Cliente> = new EventEmitter<Cliente>();
 
-    onEmpresaNameChange(value: string){
-        this.empresaDetail.nombre = value;
+    onClienteNameChange(value: string){
+        this.clienteDetail.nombre = value;
     }
 
-    goToEmpresas(){
-        this.view.emit(this.empresaDetail);
+    goToClientes(){
+        this.view.emit(this.clienteDetail);
     }
 
-    handleItemEdit(event: Item, empresa: Empresa){
-        this.kaigoService
-            .updateItem(event, empresa)
+    handleItemEdit(event: Item, cliente: Cliente){
+       /* this.kaigoService
+            .updateItem(event, cliente)
             .subscribe((data:Item)=>{
-                this.empresaDetail.items = this.empresaDetail.items.map((item: Item)=>{
+                this.clienteDetail.items = this.clienteDetail.items.map((item: Item)=>{
                     if(item.id === event.id){
                         item = Object.assign({},item,event);
                     }
                     return item;
                 })
             })
+            */
     }
 
     handleRemoveItem(event: Item){
-        this.empresaDetail.items = this.empresaDetail.items.filter((item: Item)=>{
+        /*
+        this.clienteDetail.items = this.clienteDetail.items.filter((item: Item)=>{
             return item.id !== event.id;
         });
+        */
     }
 
     toggleEdit(){
         if(this.editing){
-            this.editEmpresa.emit(this.empresaDetail);
+            this.editCliente.emit(this.clienteDetail);
         }
         this.editing = !this.editing;
     }
