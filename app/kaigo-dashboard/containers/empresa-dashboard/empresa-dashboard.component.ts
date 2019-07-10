@@ -9,7 +9,8 @@ import { KaigoDashboardService } from '../../kaigo-dashboard.service';
             <empresa-detail
                 *ngFor="let empresa of empresas"
                 [empresaDetail] = "empresa"
-                (editEmpresa)="handleEditEmpresa($event)">
+                (editEmpresa) = "handleEditEmpresa($event)"
+                >
             </empresa-detail>
         </div>
     `

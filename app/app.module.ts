@@ -12,7 +12,6 @@ import { KaigoDashboardModule } from './kaigo-dashboard/kaigo-dashboard.module';
 const routes: Routes =[
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: '**', component: NotFoundComponent}
-
 ]
 
 @NgModule({

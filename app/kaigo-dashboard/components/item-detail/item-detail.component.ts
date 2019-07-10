@@ -1,7 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {Component, Input, Output} from '@angular/core';
 import { EventEmitter } from '@angular/common/src/facade/async';
-import { KaigoDashboardService } from '../../kaigo-dashboard.service';
 import { Item } from '../../models/kaigo.interface';
 
 @Component({
@@ -35,7 +34,7 @@ import { Item } from '../../models/kaigo.interface';
 })
 export class ItemDetailComponent{
 
-    constructor(private kaigoService: KaigoDashboardService){}
+    constructor(){}
     
     editing: boolean = false;
 

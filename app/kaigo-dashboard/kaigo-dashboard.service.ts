@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
-const KAIGO_API: string = '/api/kaigo';
+const KAIGO_API: string = 'api/clientes';
 const ITEMS: string = 'items';
 
 @Injectable()

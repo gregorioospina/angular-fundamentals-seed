@@ -29,9 +29,7 @@ import { KaigoDashboardService } from '../../kaigo-dashboard.service';
 
             <button (click) = "toggleEdit()"> {{edit?'Done':'Edit'}}</button> <br>
             --------o--------
-            <button (click)="goToEmpresas()">
-                Empresas
-            </button>
+
         </div>
     `
 
@@ -58,16 +56,6 @@ export class EmpresaDetailComponent{
     goToEmpresas(){
         this.view.emit(this.empresaDetail);
     }
-
-    /*
-    handleEmpresaEdit(event: Empresa){
-        this.kaigoService
-            .updateEmpresa(event)
-            .subscribe((data:Empresa)=>{
-                this.empresaDetail = data;
-            })
-    }
-    */
 
     handleItemEdit(event: Item, empresa: Empresa){
         this.kaigoService
